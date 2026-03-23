@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b0b10"/>
+      <stop offset="0.5" stop-color="#101019"/>
+      <stop offset="1" stop-color="#000000"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="30%" cy="15%" r="70%">
+      <stop offset="0" stop-color="#d4af37" stop-opacity="0.38"/>
+      <stop offset="0.55" stop-color="#d4af37" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#d4af37" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="goldInk" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af37" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#ffb020" stop-opacity="0.35"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" rx="36" fill="url(#bg)"/>
+  <rect width="1200" height="700" rx="36" fill="url(#glow)"/>
+
+  <!-- hair art swirls -->
+  <g opacity="0.98" fill="none" stroke-linecap="round">
+    <path d="M205 410c110-165 270-220 390-150 100 60 185 185 330 165 80-10 140-60 185-120"
+          stroke="url(#goldInk)" stroke-width="18"/>
+    <path d="M230 520c120-130 260-170 375-120 95 42 160 142 270 150 95 8 165-48 200-95"
+          stroke="rgba(212,175,55,0.35)" stroke-width="14"/>
+    <path d="M260 300c90-70 165-90 240-70 75 20 140 80 250 85 100 6 175-38 240-100"
+          stroke="rgba(255,176,32,0.22)" stroke-width="12"/>
+    <circle cx="370" cy="245" r="9" fill="#d4af37" opacity="0.85"/>
+    <circle cx="825" cy="255" r="6" fill="#ffb020" opacity="0.75"/>
+    <circle cx="980" cy="390" r="7" fill="#d4af37" opacity="0.65"/>
+    <circle cx="260" cy="455" r="5" fill="#60a5fa" opacity="0.45"/>
+  </g>
+
+  <text x="70" y="620" fill="#f7e7a8" font-family="ui-sans-serif, system-ui" font-size="44" font-weight="800" letter-spacing="2">
+    Hair Art
+  </text>
+  <text x="70" y="660" fill="rgba(244,244,245,0.75)" font-family="ui-sans-serif, system-ui" font-size="24" font-weight="600" letter-spacing="1">
+    Patterns " Creative designs
+  </text>
+</svg>
+

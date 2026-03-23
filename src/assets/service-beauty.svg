@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b0b10"/>
+      <stop offset="0.45" stop-color="#13131c"/>
+      <stop offset="1" stop-color="#000000"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="70%" cy="25%" r="70%">
+      <stop offset="0" stop-color="#d4af37" stop-opacity="0.28"/>
+      <stop offset="0.55" stop-color="#d4af37" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#d4af37" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d4af37" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#60a5fa" stop-opacity="0.25"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" rx="36" fill="url(#bg)"/>
+  <rect width="1200" height="700" rx="36" fill="url(#glow)"/>
+
+  <!-- abstract face + beauty strokes -->
+  <g opacity="0.98">
+    <path
+      d="M600 145c120 0 210 94 210 214 0 140-95 255-210 255S390 499 390 359c0-120 90-214 210-214z"
+      fill="rgba(12,12,18,0.88)"
+      stroke="rgba(212,175,55,0.35)"
+      stroke-width="3"
+    />
+    <path d="M525 260c40-55 110-55 150 0" fill="none" stroke="url(#accent)" stroke-width="10" stroke-linecap="round" opacity="0.85"/>
+    <path d="M480 385c45 60 195 60 240 0" fill="none" stroke="rgba(212,175,55,0.45)" stroke-width="10" stroke-linecap="round" opacity="0.8"/>
+    <path d="M565 455c22 18 48 18 70 0" fill="none" stroke="rgba(96,165,250,0.35)" stroke-width="8" stroke-linecap="round" opacity="0.7"/>
+  </g>
+
+  <!-- decorative dots -->
+  <g opacity="0.9">
+    <circle cx="240" cy="210" r="9" fill="#d4af37" opacity="0.8"/>
+    <circle cx="290" cy="260" r="5" fill="#60a5fa" opacity="0.55"/>
+    <circle cx="960" cy="185" r="7" fill="#d4af37" opacity="0.65"/>
+    <circle cx="1020" cy="250" r="4" fill="#60a5fa" opacity="0.45"/>
+  </g>
+
+  <text x="70" y="620" fill="#f7e7a8" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto" font-size="44" font-weight="800" letter-spacing="2">
+    Beauty & Glow
+  </text>
+  <text x="70" y="660" fill="rgba(244,244,245,0.75)" font-family="ui-sans-serif, system-ui" font-size="24" font-weight="600" letter-spacing="1">
+    Facials " After-care " Polish
+  </text>
+</svg>
+
