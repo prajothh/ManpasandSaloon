@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import {
   ArrowRight,
   Check,
@@ -13,6 +13,7 @@ import {
   Scissors,
   Sparkles,
   Flower2,
+  Users,
 } from 'lucide-react'
 import { BookingModal } from './components/BookingModal'
 import { Button } from './components/ui/Button'
@@ -21,11 +22,11 @@ import logoImg from './assets/Gemini_Generated_Image_xs2a0exs2a0exs2a.png'
 
 import backgroundImg from './BackgroundImage.png'
 
-import galleryHairStyling from './assets/hair styling.png'
+import galleryHairStyling from './assets/hair styling neww.png'
 import galleryBeautyGlow from './assets/Beauty and glow.png'
 import galleryHairArt from './assets/hair art new.png'
 import galleryWeddingMakeup from './assets/wedding makeup.png'
-import galleryManiPedi from './assets/mani and pedi.png'
+import galleryManiPedi from './assets/mani and padi new.png'
 import galleryWeddingMehndi from './assets/wedding mehdi.png'
 
 const services = [
@@ -94,49 +95,56 @@ const pricing = [
 const gallery = [
   {
     label: 'Hair Styling',
-    alt: 'Hair styling salon photo',
+    alt: 'Unisex hair styling at the salon',
     imageSrc: galleryHairStyling,
     gradient: 'from-amber-500/25 to-black',
-    description: 'Cuts, fades, and styling for a clean finish.',
+    description:
+      'Cuts, fades, and finishes — every length, texture, and vibe welcome.',
   },
   {
     label: 'Beauty & Glow',
-    alt: 'Beauty and glow salon photo',
+    alt: 'Beauty and facial glow treatment',
     imageSrc: galleryBeautyGlow,
     gradient: 'from-gold-500/25 to-black',
-    description: 'Facials and glow treatments for radiant skin.',
+    description:
+      'Facials and glow care tailored to your skin — relaxed, inclusive chair.',
   },
   {
     label: 'Hair Art',
-    alt: 'Hair art styling photo',
+    alt: 'Creative hair art and patterns',
     imageSrc: galleryHairArt,
     gradient: 'from-amber-400/25 to-black',
-    description: 'Creative patterns for events and celebrations.',
+    description:
+      'Statement patterns for parties, festivals, and big days — yours to own.',
   },
   {
     label: 'Wedding Makeup',
-    alt: 'Wedding makeup photo',
+    alt: 'Wedding and event makeup',
     imageSrc: galleryWeddingMakeup,
     gradient: 'from-yellow-400/25 to-black',
-    description: 'Bridal glam with precise, long-lasting detail.',
+    description:
+      'Bridal, groom, and party glam — camera-ready looks for the whole crew.',
   },
   {
     label: 'Mani & Pedi',
-    alt: 'Manicure and pedicure photo',
+    alt: 'Manicure and pedicure service',
     imageSrc: galleryManiPedi,
     gradient: 'from-amber-300/25 to-black',
-    description: 'Shaping, polish, and hygienic nail care.',
+    description:
+      'Hands and feet, polished and hygienic — classic or bold, you choose.',
   },
   {
     label: 'Wedding Mehndi',
-    alt: 'Wedding mehndi photo',
+    alt: 'Wedding and celebration mehndi',
     imageSrc: galleryWeddingMehndi,
     gradient: 'from-gold-400/25 to-black',
-    description: 'Intricate bridal mehndi with elegant finishing.',
+    description:
+      'Fine-line bridal sets and celebration henna — traditions, your way.',
   },
 ] as const
 
 export default function App() {
+  const prefersReducedMotion = useReducedMotion()
   const [bookingOpen, setBookingOpen] = useState(false)
   const [contactStatus, setContactStatus] = useState<
     'idle' | 'success'
@@ -386,46 +394,125 @@ export default function App() {
         </section>
 
         <section id="gallery" className="mx-auto max-w-7xl px-4 py-16">
-          <div>
-            <p className="text-xs uppercase tracking-[0.28em] text-gold-200">
-              Gallery
-            </p>
-            <h2 className="mt-3 text-3xl font-black tracking-tight">
-              The glow-up grid.
-            </h2>
-            <p className="mt-3 max-w-xl text-zinc-300">
-              Hover the tiles. Each session ends with clean finishing and a
-              premium look.
-            </p>
+          <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between lg:gap-12">
+            <div className="min-w-0 flex-1">
+              <p className="text-xs uppercase tracking-[0.28em] text-gold-200">
+                Gallery
+              </p>
+              <h2 className="mt-3 text-3xl font-black tracking-tight">
+                Looks for every vibe.
+              </h2>
+              <p className="mt-3 max-w-xl text-zinc-300">
+                Our chairs are unisex by design — same craft, same gold
+                standard. Hover the tiles for a closer look.
+              </p>
+            </div>
+
+            <div className="flex shrink-0 flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
+              <div className="relative overflow-hidden rounded-2xl border border-gold-500/35 bg-gradient-to-br from-gold-500/[0.12] via-black/40 to-amber-500/[0.08] p-[1px] shadow-[0_0_32px_-8px_rgba(212,175,55,0.45)]">
+                <div className="flex items-center gap-3 rounded-[0.9rem] bg-black/55 px-4 py-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-gold-500/25 bg-gradient-to-br from-gold-500/20 to-transparent">
+                    <Users className="h-5 w-5 text-gold-200" aria-hidden />
+                  </div>
+                  <div>
+                    <p className="text-[0.65rem] font-bold uppercase tracking-[0.22em] text-gold-300/90">
+                      Unisex studio
+                    </p>
+                    <p className="mt-0.5 text-sm font-semibold text-white">
+                      All genders · All styles
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                className="flex flex-wrap gap-2 sm:flex-col sm:gap-2"
+                aria-label="Inclusive services"
+              >
+                {['Cuts & colour', 'Skin & glow', 'Nails & events'].map(
+                  (chip) => (
+                    <span
+                      key={chip}
+                      className="inline-flex items-center rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-[0.7rem] font-medium tracking-wide text-zinc-300"
+                    >
+                      {chip}
+                    </span>
+                  )
+                )}
+              </div>
+            </div>
           </div>
 
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {gallery.map((g, i) => (
               <motion.div
                 key={g.label}
-                initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.25 }}
-                transition={{ duration: 0.5, delay: i * 0.04 }}
-                className="group relative min-w-0 overflow-hidden rounded-3xl border border-white/10 bg-white/5"
+                initial={
+                  prefersReducedMotion
+                    ? false
+                    : { opacity: 0, y: 20 }
+                }
+                whileInView={
+                  prefersReducedMotion
+                    ? undefined
+                    : { opacity: 1, y: 0 }
+                }
+                viewport={{ once: true, amount: 0.2 }}
+                transition={
+                  prefersReducedMotion
+                    ? { duration: 0 }
+                    : {
+                        duration: 0.4,
+                        delay: i * 0.04,
+                        ease: [0.25, 0.1, 0.25, 1],
+                      }
+                }
+                whileHover={
+                  prefersReducedMotion
+                    ? undefined
+                    : {
+                        y: -8,
+                        transition: {
+                          type: 'tween',
+                          duration: 0.22,
+                          ease: 'easeOut',
+                        },
+                      }
+                }
+                className="group relative aspect-[3/4] w-full min-h-0 overflow-hidden rounded-3xl border border-white/10 bg-zinc-950 shadow-[0_12px_40px_-15px_rgba(0,0,0,0.65)] ring-1 ring-white/5 transition-[box-shadow,transform] duration-300 ease-out hover:shadow-[0_20px_48px_-16px_rgba(212,175,55,0.22)] hover:ring-gold-500/35"
               >
-                <div className="relative aspect-[4/3] w-full max-h-[200px] overflow-hidden sm:max-h-[220px]">
-                  <img
-                    src={g.imageSrc}
-                    alt={g.alt}
-                    loading="lazy"
-                    sizes="(max-width:640px) 100vw, 33vw"
-                    className="h-full w-full min-h-0 min-w-0 max-h-full max-w-full object-cover object-center bg-black/10 object-center opacity-100 transition-opacity duration-300 group-hover:opacity-100"
-                  />
+                <img
+                  src={g.imageSrc}
+                  alt={g.alt}
+                  loading="lazy"
+                  decoding="async"
+                  sizes="(max-width:640px) 100vw, 33vw"
+                  className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-300 ease-out group-hover:scale-105"
+                />
+
+                <div
+                  className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-gold-500/15 via-transparent to-amber-500/5 opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100"
+                  aria-hidden
+                />
+
+                <div className="absolute right-3 top-3 z-20 flex h-9 w-9 items-center justify-center rounded-full border border-gold-500/35 bg-black/70 shadow-glow transition-transform duration-300 ease-out group-hover:scale-105">
+                  <Sparkles className="h-4 w-4 text-gold-200" />
                 </div>
 
-                <div className="relative p-6">
-                  <p className="text-sm font-bold text-white">{g.label}</p>
-                  <p className="mt-2 text-sm text-zinc-300">
+                <div
+                  className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-[55%] bg-gradient-to-t from-black via-black/80 to-transparent"
+                  aria-hidden
+                />
+
+                <div className="absolute inset-x-0 bottom-0 z-20 flex flex-col items-center px-5 pb-6 pt-16 text-center sm:px-6 sm:pb-7">
+                  <p className="text-lg font-bold tracking-tight text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
+                    {g.label}
+                  </p>
+                  <p className="mt-2 max-w-[22rem] text-sm leading-relaxed text-zinc-200/95 drop-shadow-[0_1px_4px_rgba(0,0,0,0.75)]">
                     {g.description}
                   </p>
-                  <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/20 px-3 py-1 text-xs font-semibold text-gold-200">
-                    <Check className="h-4 w-4" />
+                  <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-gold-500/35 bg-black/65 px-3.5 py-1.5 text-xs font-semibold text-gold-200 shadow-[0_4px_20px_-4px_rgba(212,175,55,0.35)]">
+                    <Check className="h-4 w-4 shrink-0 text-gold-300" />
                     After-care included
                   </div>
                 </div>
