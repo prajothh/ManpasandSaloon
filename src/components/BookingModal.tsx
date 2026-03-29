@@ -83,7 +83,7 @@ export function BookingModal({
     <AnimatePresence>
       {open && (
         <motion.div
-          className="fixed inset-0 z-50"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -99,10 +99,10 @@ export function BookingModal({
             role="dialog"
             aria-modal="true"
             aria-label="Book an appointment"
-            className="absolute left-1/2 top-1/2 w-full max-w-xl -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-3xl border border-white/10 bg-zinc-950/80 shadow-glow"
-            initial={{ opacity: 0, y: 18, scale: 0.98 }}
+            className="relative w-full max-w-xl overflow-hidden rounded-3xl border border-white/10 bg-zinc-950/80 shadow-glow"
+            initial={{ opacity: 0, y: 12, scale: 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 12, scale: 0.98 }}
+            exit={{ opacity: 0, y: 10, scale: 0.98 }}
             transition={{ type: 'spring', stiffness: 260, damping: 22 }}
           >
             <div className="flex items-center justify-between gap-4 border-b border-white/10 px-5 py-4">

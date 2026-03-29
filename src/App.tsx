@@ -13,17 +13,20 @@ import {
   Scissors,
   Sparkles,
   Flower2,
-  Star,
 } from 'lucide-react'
 import { BookingModal } from './components/BookingModal'
 import { Button } from './components/ui/Button'
 
-import serviceHair from './assets/service-hair.svg'
-import serviceBeauty from './assets/service-beauty.svg'
-import serviceHairArt from './assets/service-hair-art.svg'
-import serviceWeddingMakeup from './assets/service-wedding-makeup.svg'
-import serviceManicurePedicure from './assets/service-manicure-pedicure.svg'
-import serviceMehndi from './assets/service-mehndi.svg'
+import logoImg from './assets/Gemini_Generated_Image_xs2a0exs2a0exs2a.png'
+
+import backgroundImg from './BackgroundImage.png'
+
+import galleryHairStyling from './assets/hair styling.png'
+import galleryBeautyGlow from './assets/Beauty and glow.png'
+import galleryHairArt from './assets/hair art new.png'
+import galleryWeddingMakeup from './assets/wedding makeup.png'
+import galleryManiPedi from './assets/mani and pedi.png'
+import galleryWeddingMehndi from './assets/wedding mehdi.png'
 
 const services = [
   {
@@ -91,39 +94,45 @@ const pricing = [
 const gallery = [
   {
     label: 'Hair Styling',
-    alt: 'Hair styling unisex concept image',
-    imageSrc: serviceHair,
+    alt: 'Hair styling salon photo',
+    imageSrc: galleryHairStyling,
     gradient: 'from-amber-500/25 to-black',
+    description: 'Cuts, fades, and styling for a clean finish.',
   },
   {
     label: 'Beauty & Glow',
-    alt: 'Beauty glow concept image',
-    imageSrc: serviceBeauty,
+    alt: 'Beauty and glow salon photo',
+    imageSrc: galleryBeautyGlow,
     gradient: 'from-gold-500/25 to-black',
+    description: 'Facials and glow treatments for radiant skin.',
   },
   {
     label: 'Hair Art',
-    alt: 'Hair art concept image',
-    imageSrc: serviceHairArt,
+    alt: 'Hair art styling photo',
+    imageSrc: galleryHairArt,
     gradient: 'from-amber-400/25 to-black',
+    description: 'Creative patterns for events and celebrations.',
   },
   {
     label: 'Wedding Makeup',
-    alt: 'Wedding makeup concept image',
-    imageSrc: serviceWeddingMakeup,
+    alt: 'Wedding makeup photo',
+    imageSrc: galleryWeddingMakeup,
     gradient: 'from-yellow-400/25 to-black',
+    description: 'Bridal glam with precise, long-lasting detail.',
   },
   {
     label: 'Mani & Pedi',
-    alt: 'Manicure and pedicure concept image',
-    imageSrc: serviceManicurePedicure,
+    alt: 'Manicure and pedicure photo',
+    imageSrc: galleryManiPedi,
     gradient: 'from-amber-300/25 to-black',
+    description: 'Shaping, polish, and hygienic nail care.',
   },
   {
     label: 'Wedding Mehndi',
-    alt: 'Wedding mehndi concept image',
-    imageSrc: serviceMehndi,
+    alt: 'Wedding mehndi photo',
+    imageSrc: galleryWeddingMehndi,
     gradient: 'from-gold-400/25 to-black',
+    description: 'Intricate bridal mehndi with elegant finishing.',
   },
 ] as const
 
@@ -151,203 +160,130 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-black text-zinc-100">
-      <header className="sticky top-0 z-40 border-b border-white/5 bg-black/70 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3">
-          <div className="flex items-center gap-3">
-            <div className="grid h-10 w-10 place-items-center rounded-2xl border border-gold-500/30 bg-gradient-to-br from-gold-500/20 to-white/0 shadow-glow">
-              <span className="text-lg font-black tracking-tight">MS</span>
-            </div>
-            <div>
-              <p className="text-sm font-semibold leading-tight">
-                Manpasand Men&apos;s Saloon
-              </p>
-              <p className="text-xs text-zinc-400">Cuts • Beard • Hygiene</p>
-            </div>
-          </div>
-
-          <nav className="hidden items-center gap-7 md:flex" aria-label="Primary">
-            {navItems.map((item) => (
-              <a
-                key={item.id}
-                href={`#${item.id}`}
-                className="text-sm font-medium text-zinc-200 hover:text-white transition"
-              >
-                {item.label}
-              </a>
-            ))}
-          </nav>
-
-          <div className="flex items-center gap-3">
-            <Button
-              variant="secondary"
-              size="sm"
-              onClick={() => setBookingOpen(true)}
-            >
-              Book now <ArrowRight className="h-4 w-4" />
-            </Button>
-          </div>
-        </div>
-      </header>
-
       <main>
-        <section className="relative overflow-hidden pt-16">
-          <div className="pointer-events-none absolute inset-0 -z-10">
-            <div className="absolute left-1/2 top-[-220px] h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-gold-500/10 blur-3xl" />
-            <div className="absolute -left-24 top-40 h-80 w-80 rounded-full bg-amber-400/10 blur-3xl" />
-            <div className="absolute -right-24 top-80 h-80 w-80 rounded-full bg-yellow-400/10 blur-3xl" />
+        
+        <section className="relative overflow-hidden pb-20">
+         
+          <div className="absolute inset-0 z-0">
+            <img
+              src={backgroundImg}
+              alt=""
+              className="h-full w-full object-cover object-center"
+            />
+            <div className="absolute inset-0 bg-black/16" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-transparent" />
+            {/* Fade image into page background at the bottom (no hard edge) */}
+            <div
+              className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-40 bg-gradient-to-t from-black via-black/75 to-transparent sm:h-52 md:h-64"
+              aria-hidden="true"
+            />
           </div>
 
-          <div className="mx-auto max-w-7xl px-4">
-            <div className="grid items-center gap-10 lg:grid-cols-2">
-              <motion.div
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.35 }}
-                transition={{ duration: 0.6 }}
-              >
-                <div className="inline-flex items-center gap-3 rounded-full border border-gold-500/20 bg-white/5 px-4 py-2">
-                  <span className="h-2 w-2 rounded-full bg-gold-300 shadow-glow" />
-                  <span className="text-xs font-semibold uppercase tracking-[0.28em] text-gold-200">
-                    Premium grooming experience
-                  </span>
+          <header className="relative z-20 ">
+            <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
+              <div className="flex items-center gap-3">
+                <div className="grid h-10 w-10 place-items-center rounded-2xl border border-gold-500/30 bg-gradient-to-br from-gold-500/20 to-white/0 shadow-glow">
+                  <img
+                    src={logoImg}
+                    alt="Manpasand Saloon logo"
+                    className="h-7 w-7 object-contain"
+                    loading="eager"
+                  />
                 </div>
+                <div>
+                  <p className="text-sm font-semibold leading-tight text-white">
+                    Manpasand Men&apos;s Saloon
+                  </p>
+                  <p className="text-xs text-zinc-300">Cuts • Beard • Hygiene</p>
+                </div>
+              </div>
 
-                <h1 className="mt-6 text-4xl font-black tracking-tight sm:text-5xl lg:text-6xl">
-                  Precision cuts for modern men.
-                </h1>
-                <p className="mt-4 max-w-xl text-base text-zinc-300 sm:text-lg">
-                  A Nike-level look for your everyday. Fresh fades, clean
-                  lines, and beard sculpting in a hygiene-first setup.
-                </p>
-
-                <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-                  <Button
-                    size="lg"
-                    onClick={() => setBookingOpen(true)}
-                    className="shadow-glow"
-                  >
-                    Book Appointment <ArrowRight className="h-5 w-5" />
-                  </Button>
+              <nav
+                className="flex min-w-0 flex-1 items-center justify-center gap-5 overflow-x-auto whitespace-nowrap sm:gap-7"
+                aria-label="Primary"
+              >
+                {navItems.map((item) => (
                   <a
-                    href="#services"
-                    className="inline-flex h-12 items-center justify-center rounded-xl border border-white/10 bg-white/5 px-6 text-sm font-semibold text-white/90 hover:bg-white/10 transition"
+                    key={item.id}
+                    href={`#${item.id}`}
+                    className="text-sm font-medium text-zinc-100 drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)] hover:text-white transition"
                   >
-                    Explore Services
+                    {item.label}
                   </a>
-                </div>
+                ))}
+              </nav>
 
-                <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3">
-                  {[
-                    { k: '40+', v: 'Years experience' },
-                    { k: '100%', v: 'Hygiene checked' },
-                    { k: '4.9', v: 'Client satisfaction' },
-                  ].map((s) => (
-                    <div
-                      key={s.k}
-                      className="rounded-2xl border border-white/10 bg-white/5 p-4"
-                    >
-                      <p className="text-lg font-black text-gold-200">
-                        {s.k}
-                      </p>
-                      <p className="mt-1 text-xs text-zinc-300">{s.v}</p>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 18 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.35 }}
-                transition={{ duration: 0.65, delay: 0.05 }}
-              >
-                <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent p-1">
-                  <div className="absolute inset-0 bg-[radial-gradient(1200px_circle_at_20%_10%,rgba(212,175,55,0.22),transparent_55%),radial-gradient(900px_circle_at_80%_30%,rgba(245,158,11,0.18),transparent_60%)]" />
-                  <div className="relative h-full rounded-2xl bg-black/40 p-6">
-                    <div className="flex items-center justify-between">
-                      <p className="text-xs uppercase tracking-[0.28em] text-gold-200">
-                        Today&apos;s vibe
-                      </p>
-                      <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1">
-                        <Star className="h-4 w-4 text-gold-200" />
-                        <span className="text-xs font-semibold text-zinc-200">
-                          4.9
-                        </span>
-                      </div>
-                    </div>
-
-                    <div className="mt-6 overflow-hidden rounded-2xl border border-white/10 bg-black/30">
-                      <div className="relative h-44 w-full">
-                        <img
-                          src={serviceHair}
-                          alt="Unisex hair styling model concept image"
-                          className="absolute inset-0 h-full w-full object-cover transition-transform duration-500"
-                          loading="lazy"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                      </div>
-                    </div>
-
-                    <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                      {[
-                        {
-                          title: 'Fade mastery',
-                          desc: 'Clean blend, sharp finish.',
-                        },
-                        {
-                          title: 'Beard shaping',
-                          desc: 'Line-up detail you can feel.',
-                        },
-                      ].map((card) => (
-                        <div
-                          key={card.title}
-                          className="rounded-2xl border border-white/10 bg-white/5 p-4"
-                        >
-                          <p className="text-sm font-bold text-white">
-                            {card.title}
-                          </p>
-                          <p className="mt-1 text-sm text-zinc-300">
-                            {card.desc}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
-
-                    <div className="mt-6 rounded-2xl border border-white/10 bg-white/5 p-4">
-                      <div className="flex items-start gap-3">
-                        <div className="mt-1 grid h-10 w-10 place-items-center rounded-xl bg-gold-500/15 border border-gold-500/25">
-                          <Sparkles className="h-5 w-5 text-gold-200" />
-                        </div>
-                        <div>
-                          <p className="text-sm font-bold">
-                            Hygiene-first grooming
-                          </p>
-                          <p className="mt-1 text-sm text-zinc-300">
-                            Single-use touchpoints, sanitised tools, and a
-                            clean workstation.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="mt-6 flex flex-wrap gap-2">
-                      {['Hot towel', 'Skin fade', 'Beard oil', 'Clean tools'].map(
-                        (tag) => (
-                          <span
-                            key={tag}
-                            className="rounded-full border border-white/10 bg-black/20 px-3 py-1 text-xs text-zinc-300"
-                          >
-                            {tag}
-                          </span>
-                        )
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
+              <div className="flex shrink-0 items-center gap-3">
+                <Button
+                  variant="secondary"
+                  size="sm"
+                  onClick={() => setBookingOpen(true)}
+                >
+                  Book now <ArrowRight className="h-4 w-4" />
+                </Button>
+              </div>
             </div>
+          </header>
+
+          {/* Hero content */}
+          <div className="relative z-10 mx-auto max-w-7xl px-6 pt-10 sm:pt-14">
+    <div className="max-w-2xl">
+
+      {/* TOP BADGE */}
+      <div className="inline-flex items-center gap-2 rounded-full border border-gold-500/30 bg-black/40 px-4 py-2 backdrop-blur-md">
+        <span className="h-2 w-2 rounded-full bg-gold-400" />
+        <span className="text-xs font-semibold tracking-widest text-gold-300 uppercase">
+          Premium grooming experience
+        </span>
+      </div>
+
+      {/* HEADING */}
+      <h1 className="mt-6 text-5xl font-extrabold leading-tight text-white sm:text-6xl">
+        Precision cuts <br /> for modern men.
+      </h1>
+
+      {/* SUBTEXT */}
+      <p className="mt-5 text-lg text-zinc-300">
+        A Nike-level look for your everyday. Fresh fades, clean lines,
+        and beard sculpting in a hygiene-first setup.
+      </p>
+
+      {/* BUTTONS */}
+      <div className="mt-8 flex gap-4">
+        <button
+          onClick={() => setBookingOpen(true)}
+          className="flex items-center gap-2 rounded-xl bg-gold-500 px-6 py-3 text-sm font-semibold text-black hover:bg-gold-400 transition"
+        >
+          Book Appointment <ArrowRight size={18} />
+        </button>
+
+        <a
+          href="#services"
+          className="rounded-xl border border-white/20 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10 transition"
+        >
+          Explore Services
+        </a>
+      </div>
+
+      {/* STATS */}
+      <div className="mt-10 flex gap-6">
+        {[
+          { k: '40+', v: 'Years experience' },
+          { k: '100%', v: 'Hygiene checked' },
+          { k: '4.9', v: 'Client satisfaction' },
+        ].map((item) => (
+          <div
+            key={item.k}
+            className="rounded-xl border border-white/10 bg-white/5 px-5 py-3 backdrop-blur-md"
+          >
+            <p className="text-xl font-bold text-gold-300">{item.k}</p>
+            <p className="text-xs text-zinc-300">{item.v}</p>
           </div>
-        </section>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
 
         <section id="services" className="mx-auto max-w-7xl px-4 py-16">
           <div className="flex items-end justify-between gap-6">
@@ -405,7 +341,10 @@ export default function App() {
           aria-label="Highlights"
         >
           <div className="rounded-3xl border border-white/10 bg-gradient-to-r from-white/5 via-white/0 to-gold-500/10 p-6 md:p-8">
-            <div className="grid gap-6 md:grid-cols-3">
+            <div
+              className="flex gap-6 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+              role="list"
+            >
               {[
                 {
                   title: 'Fast check-in',
@@ -417,7 +356,11 @@ export default function App() {
                 },
                 { title: 'Premium finishing', desc: 'Styling that looks good all day.' },
               ].map((b) => (
-                <div key={b.title} className="rounded-2xl border border-white/10 bg-black/20 p-5">
+                <div
+                  key={b.title}
+                  className="min-w-[280px] flex-1 rounded-2xl border border-white/10 bg-black/20 p-5 md:min-w-0"
+                  role="listitem"
+                >
                   <p className="text-sm font-bold">{b.title}</p>
                   <p className="mt-2 text-sm text-zinc-300">{b.desc}</p>
                 </div>
@@ -464,23 +407,22 @@ export default function App() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.25 }}
                 transition={{ duration: 0.5, delay: i * 0.04 }}
-                className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5"
+                className="group relative min-w-0 overflow-hidden rounded-3xl border border-white/10 bg-white/5"
               >
-                <div className="relative h-44 w-full">
+                <div className="relative aspect-[4/3] w-full max-h-[200px] overflow-hidden sm:max-h-[220px]">
                   <img
                     src={g.imageSrc}
                     alt={g.alt}
                     loading="lazy"
-                    className="h-full w-full object-cover opacity-90 transition duration-500 group-hover:scale-105 group-hover:opacity-100"
+                    sizes="(max-width:640px) 100vw, 33vw"
+                    className="h-full w-full min-h-0 min-w-0 max-h-full max-w-full object-cover object-center bg-black/10 object-center opacity-100 transition-opacity duration-300 group-hover:opacity-100"
                   />
-                  <div className={`absolute inset-0 bg-gradient-to-br ${g.gradient} opacity-60`} />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
                 </div>
 
                 <div className="relative p-6">
                   <p className="text-sm font-bold text-white">{g.label}</p>
                   <p className="mt-2 text-sm text-zinc-300">
-                    Styled finish with premium detail.
+                    {g.description}
                   </p>
                   <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/20 px-3 py-1 text-xs font-semibold text-gold-200">
                     <Check className="h-4 w-4" />
@@ -742,11 +684,11 @@ export default function App() {
           </div>
         </section>
 
-        <footer className="border-t border-white/5 bg-black/70">
+        <footer className="border-t border-white/5 bg-black/90">
           <div className="mx-auto max-w-7xl px-4 py-10">
             <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
               <div>
-                <p className="text-sm font-bold">Manpasand Men&apos;s Saloon</p>
+                <p className="text-sm font-bold">Manpasand Unisex Saloon</p>
                 <p className="mt-2 text-sm text-zinc-400">
                   Premium grooming with a hygiene-first mindset.
                 </p>
