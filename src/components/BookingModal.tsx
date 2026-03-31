@@ -3,7 +3,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { X } from 'lucide-react'
 import { Button } from './ui/Button'
 
-type ServiceId =
+export type ServiceId =
   | 'hair'
   | 'beauty'
   | 'hairArt'
@@ -14,16 +14,18 @@ type ServiceId =
 export function BookingModal({
   open,
   onClose,
+  initialService,
 }: {
   open: boolean
   onClose: () => void
+  initialService?: ServiceId
 }) {
   const panelRef = useRef<HTMLDivElement | null>(null)
   const nameRef = useRef<HTMLInputElement | null>(null)
 
   const [name, setName] = useState('')
   const [phone, setPhone] = useState('')
-  const [service, setService] = useState<ServiceId>('hair')
+  const [service, setService] = useState<ServiceId>(initialService ?? 'hair')
   const [time, setTime] = useState('Soon')
   const [status, setStatus] = useState<'idle' | 'success'>('idle')
 
@@ -42,9 +44,10 @@ export function BookingModal({
   useEffect(() => {
     if (!open) return
     setStatus('idle')
+    setService(initialService ?? 'hair')
     // Focus the first field for accessibility.
     window.setTimeout(() => nameRef.current?.focus(), 50)
-  }, [open])
+  }, [open, initialService])
 
   useEffect(() => {
     if (!open) return
@@ -73,7 +76,7 @@ export function BookingModal({
       onClose()
       setName('')
       setPhone('')
-      setService('hair')
+      setService(initialService ?? 'hair')
       setTime('Soon')
       setStatus('idle')
     }, 1200)
