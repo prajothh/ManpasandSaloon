@@ -17,6 +17,9 @@ import texturedHairStylingImg from '../assets/Textured Hair Styling.jpg'
 import combOverStylingImg from '../assets/comb_over_crew_cut_taper.webp'
 import frontLiftStylingImg from '../assets/front lift styling.png'
 import sideSweepStylingImg from '../assets/Side Sweep Styling .png'
+import straightHairStylingWomenImg from '../assets/Straight Hair Styling women.png'
+import softCurlStylingWomenImg from '../assets/Soft Curl Styling new.jpg'
+import beachWavesStylingWomenImg from '../assets/Beach Waves Styling .jpg'
 
 export default function GalleryDetail() {
   const { slug } = useParams<{ slug: string }>()
@@ -208,22 +211,25 @@ export default function GalleryDetail() {
                       Fresh looks with smooth movement, soft volume, and
                       camera-ready finishing.
                     </p>
-                    <div className="mt-5 grid flex-1 gap-4 sm:grid-cols-2">
+                    <div className="mt-5 grid flex-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
                     {[
                       {
                         title: 'Straight Hair Styling',
                         desc: 'Fresh, smooth styling with a clean camera-ready finish.',
                         time: '45 - 70 min',
+                        imageSrc: straightHairStylingWomenImg,
                       },
                       {
                         title: 'Soft Curl Styling',
                         desc: 'Soft curl definition with premium hold and shine.',
                         time: '45 - 70 min',
+                        imageSrc: softCurlStylingWomenImg,
                       },
                       {
                         title: 'Beach Waves Styling',
                         desc: 'Natural beachy waves with smooth, touchable movement.',
                         time: '45 - 70 min',
+                        imageSrc: beachWavesStylingWomenImg,
                       },
                       {
                         title: 'Blow Dry Styling',
@@ -266,6 +272,8 @@ export default function GalleryDetail() {
                         title={v.title}
                         desc={v.desc}
                         time={v.time}
+                        imageSrc={v.imageSrc}
+                        imageAlt={v.title}
                         onBook={() => setBookingOpen(true)}
                       />
                     ))}
@@ -278,7 +286,7 @@ export default function GalleryDetail() {
         )}
 
         {item.slug === 'beauty-glow' && (
-          <section className="mt-155">
+          <section className="mt-12">
             <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-6 shadow-[0_20px_50px_-24px_rgba(0,0,0,0.6)] sm:p-8">
               <div className="flex flex-wrap items-center justify-between gap-4">
                 <div className="min-w-0">

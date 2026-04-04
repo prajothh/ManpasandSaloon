@@ -23,7 +23,7 @@ import { galleryItems as gallery } from '../data/gallery'
 
 import logoImg from '../assets/Gemini_Generated_Image_xs2a0exs2a0exs2a.png'
 
-import backgroundImg from '../BackgroundImage.png'
+import backgroundImg from '../assets/backgrond image new.jpg'
 
 const services = [
   {
@@ -162,7 +162,7 @@ export default function Home() {
                 </div>
                 <div>
                   <p className="text-sm font-semibold leading-tight text-white">
-                    Manpasand Men&apos;s Saloon
+                    Manpasand Unisex Saloon
                   </p>
                   <p className="text-xs text-zinc-300">Cuts • Beard • Hygiene</p>
                 </div>
