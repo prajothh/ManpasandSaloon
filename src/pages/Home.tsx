@@ -970,7 +970,7 @@ export default function Home() {
               </div>
             </div>
             <p className="mt-8 text-xs text-zinc-500">
-              © {new Date().getFullYear()} Manpasand Men&apos;s Saloon. All rights reserved.
+              © {new Date().getFullYear()} Prajoth Vitekar. All rights reserved.
             </p>
           </div>
         </footer>

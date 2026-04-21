@@ -70,7 +70,7 @@ export default function GalleryDetail() {
         </div>
       </header>
 
-      <main className="mx-auto max-w-5xl px-4 pb-20 pt-8 sm:pt-12">
+      {/* <main className="mx-auto max-w-5xl px-4 pb-20 pt-8 sm:pt-12"> */}
 
         {item.slug === 'hair-styling' && (
           <motion.section
@@ -79,7 +79,7 @@ export default function GalleryDetail() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-6 shadow-[0_20px_50px_-24px_rgba(0,0,0,0.6)] sm:p-8">
+            <div className="border border-white/10 bg-white/[0.04] p-6 shadow-[0_20px_50px_-24px_rgba(0,0,0,0.6)] sm:p-8">
               <div className="flex flex-wrap items-center justify-between gap-4">
                 <div className="min-w-0">
                   <p className="text-xs uppercase tracking-[0.28em] text-gold-200">
@@ -629,7 +629,7 @@ export default function GalleryDetail() {
             </div>
           </section>
         )}
-      </main>
+      {/* </main> */}
 
       <BookingModal
         open={bookingOpen}
